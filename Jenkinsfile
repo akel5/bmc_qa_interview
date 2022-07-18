@@ -30,7 +30,7 @@ pipeline {
         stage('Run') {
             steps {
                 script{
-                    dockerImage.run()
+                    docker run -t bmc_qa_docker:latest .
                 }
             }
         }
