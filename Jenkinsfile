@@ -1,27 +1,35 @@
-node {
-    def app
-
-    stage('Clone repository') {
-        checkout scm
+pipeline {
+    agent any
+    options {
+        skipStagesAfterUnstable()
     }
-
-    stage('Build image') {
-        /* This builds the actual image; synonymous to
-         * docker build on the command line */
-
-        app = docker.build("akel/bmc_qa_docker")
-    }
-
-    stage('Test image') {
-        app.inside {
-            sh 'echo "Tests passed"'
+    stages {
+         stage('Clone repository') {
+            steps {
+                script{
+                checkout scm
+                }
+            }
         }
-    }
 
-    stage('Docker Run') {
-          agent any
-          steps {
-            sh 'docker run -t akel/bmc_qa_docker:latest .'
-          }
+        stage('Build') {
+            steps {
+                script{
+                 app = docker.build("bmc_qa_docker")
+                }
+            }
+        }
+        stage('Test'){
+            steps {
+                 echo 'Empty'
+            }
+        }
+        stage('Run') {
+            steps {
+                script{
+                    sh 'docker run -t bmc_qa_docker:latest .'
+                }
+            }
+        }
     }
 }
