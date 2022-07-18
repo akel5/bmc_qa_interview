@@ -4,7 +4,7 @@ pipeline {
         skipStagesAfterUnstable()
     }
     environment {
-        PATH = "C:\\WINDOWS\\SYSTEM32"
+        PATH = "C:\\WINDOWS\\SYSTEM32:C:\\Program Files\\Docker\\Docker\\resources\\bin"
     }
     stages {
          stage('Clone repository') {
