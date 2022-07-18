@@ -3,6 +3,9 @@ pipeline {
     options {
         skipStagesAfterUnstable()
     }
+    environment {
+        PATH = "C:\\WINDOWS\\SYSTEM32"
+    }
     stages {
          stage('Clone repository') {
             steps {
