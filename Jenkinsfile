@@ -29,7 +29,9 @@ pipeline {
         }
         stage('Run') {
             steps {
-                dockerImage.run()
+                script{
+                    dockerImage.run()
+                }
             }
         }
     }
