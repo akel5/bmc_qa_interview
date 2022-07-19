@@ -18,7 +18,8 @@ pipeline {
         stage('Build') {
             steps {
                 script{
-                 app = docker.build("bmc_qa_docker")
+                // app = docker.build("bmc_qa_docker/PATH1")
+                 app = docker.build("bmc_qa_docker");
                 }
             }
         }
