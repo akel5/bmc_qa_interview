@@ -44,14 +44,14 @@ public class Main {
 
 
 
-        if(args[0]=="aa")
-        {
+      //  if(args[0]=="aa")
+       // {
             System.out.println("aa");
-        }
-        if(args[0]=="bb")
-        {
+      //  }
+      //  if(args[0]=="bb")
+      //  {
             System.out.println("bb");
-        }
+       // }
 
     }
 
