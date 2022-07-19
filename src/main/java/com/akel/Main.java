@@ -16,7 +16,8 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        String command = "find /home/akel/test -printf \"%TY-%Tm-%Td\\t%s\\t%p\\n\" \n";
+        String URL1="/home/akel/test";
+        String command = "find "+URL1 +" -printf \"%TY-%Tm-%Td\\t%s\\t%p\\n\" \n";
 
 
         SshClient client = SshClient.setUpDefaultClient();
