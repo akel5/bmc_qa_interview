@@ -30,7 +30,7 @@ pipeline {
         stage('Run') {
             steps {
                 script {
-                    bat "docker run -t bmc_qa_docker:latest ."
+                    sh "docker run -t bmc_qa_docker:latest ."
                 }
             }
         }
