@@ -48,7 +48,7 @@ public class Main {
                 }
             }
         } finally {
-            //client.stop();
+            client.stop();
         }
     }
 
