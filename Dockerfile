@@ -7,11 +7,12 @@ FROM maven:3.8.6-openjdk-11-slim AS build
 #COPY src /home/app/src
 #COPY pom.xml /home/app
 #RUN mvn -f /home/app/pom.xml clean package
-ENV HOME=/home/usr/app
-RUN mkdir -p $HOME
-WORKDIR $HOME
+
+#ENV HOME=/home/usr/app
+#RUN mkdir -p $HOME
+#WORKDIR $HOME
 # 1. add pom.xml only here
-ADD pom.xml $HOME
+COPY pom.xml /home/app
 # 2. start downloading dependencies
 RUN ["/usr/local/bin/mvn-entrypoint.sh", "mvn", "verify", "clean", "--fail-never"]
 # 3. add all source code and start compiling
