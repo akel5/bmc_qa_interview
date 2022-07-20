@@ -33,7 +33,7 @@ pipeline {
                 script {
                     //sh "docker run -t bmc_qa_docker:latest ."
                     //sh "bmc_qa_docker:latest"
-                    bat "docker run -t bmc_qa_docker:latest ."
+                    bat ("docker run -t bmc_qa_docker:latest .", "--build-arg $path1 .")
                 }
             }
         }
