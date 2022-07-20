@@ -9,7 +9,7 @@ COPY pom.xml /home/app
 RUN mvn -f /home/app/pom.xml clean package
 #RUN ["/usr/local/bin/mvn-entrypoint.sh", "mvn", "verify", "clean", "--fail-never"]
 EXPOSE 8005
-CMD ["java","-jar","/usr/local/lib/qa_jenkins_java_code-0.0.1.jar"]
+ENTRYPOINT ["java","-jar","/usr/local/lib/qa_jenkins_java_code-0.0.1.jar"]
 
 #
 # Package stage
