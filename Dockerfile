@@ -18,7 +18,7 @@ RUN ["/usr/local/bin/mvn-entrypoint.sh", "mvn", "verify", "clean", "--fail-never
 ADD . $HOME
 RUN ["mvn", "package"]
 EXPOSE 8005
-CMD ["java", "-jar", "./target/dist.jar"]
+CMD ["java","-jar","/usr/local/lib/qa_jenkins_java_code-0.0.1.jar"]
 
 
 
