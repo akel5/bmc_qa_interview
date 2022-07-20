@@ -18,7 +18,7 @@ pipeline {
         stage('Build') {
             steps {
                 script{
-                // app = docker.build("bmc_qa_docker/PATH1")
+
                  app = docker.build("bmc_qa_docker", "--build-arg $path1 .");
                 }
             }
@@ -31,8 +31,7 @@ pipeline {
         stage('Run') {
             steps {
                 script {
-                    //sh "docker run -t bmc_qa_docker:latest ."
-                    //sh "bmc_qa_docker:latest"
+
                     bat "docker run -t bmc_qa_docker ${path1} :latest ."
                 }
             }
