@@ -1,12 +1,22 @@
 package com.akel;
 
+import org.apache.sshd.client.SshClient;
+import org.apache.sshd.client.channel.ClientChannel;
+import org.apache.sshd.client.channel.ClientChannelEvent;
+import org.apache.sshd.client.session.ClientSession;
+import org.apache.sshd.common.channel.Channel;
+
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.util.EnumSet;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
 
-       /* String URL1="/home/akel/test";
+        String URL1="/home/akel/test";
         String command = "find "+URL1 +" -printf \"%TY-%Tm-%Td\\t%s\\t%p\\n\" \n";
 
 
@@ -40,19 +50,19 @@ public class Main {
             }
         } finally {
             client.stop();
-        }  */
+        }
 
 
-
-      //  if(args[0]=="aa")
-       // {
+/*
+        if(args[0]=="aa")
+        {
             System.out.println("aa");
-      //  }
-      //  if(args[0]=="bb")
-      //  {
+        }
+        if(args[0]=="bb")
+        {
             System.out.println("bb");
-       // }
-
+        }
+*/
     }
 
 
