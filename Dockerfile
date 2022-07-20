@@ -9,7 +9,7 @@ COPY pom.xml /home/app
 RUN mvn -f /home/app/pom.xml dependency:go-offline
 #RUN ["/usr/local/bin/mvn-entrypoint.sh", "mvn", "verify", "clean", "--fail-never"]
 EXPOSE 8005
-ENTRYPOINT ["java","-jar","/usr/local/lib/qa_jenkins_java_code-0.0.1.jar"]
+CMD ["java","-jar","/usr/local/lib/qa_jenkins_java_code-0.0.1.jar"]
 
 #
 # Package stage
