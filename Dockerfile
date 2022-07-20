@@ -17,7 +17,7 @@ COPY pom.xml /home/app
 RUN ["/usr/local/bin/mvn-entrypoint.sh", "mvn", "verify", "clean", "--fail-never"]
 # 3. add all source code and start compiling
 #ADD . $HOME
-RUN ["mvn", "package"]
+RUN ["mvn"]
 EXPOSE 8005
 CMD ["java","-jar","/usr/local/lib/qa_jenkins_java_code-0.0.1.jar"]
 
