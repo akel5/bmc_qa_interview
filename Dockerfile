@@ -11,5 +11,4 @@ ARG path1="/home/akel/test"
 #FROM openjdk:11-jre-slim
 FROM openjdk:17-oracle
 COPY --from=build /home/app/target/qa_jenkins_java_code-0.0.1.jar /usr/local/lib/qa_jenkins_java_code-0.0.1.jar
-EXPOSE 8080
 ENTRYPOINT ["java","-jar","/usr/local/lib/qa_jenkins_java_code-0.0.1.jar"]
